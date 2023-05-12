@@ -63,4 +63,45 @@ public class FuncionarioDAO {
         //retorno da lista pronta
         return lista;
     }
+    
+    //Alterar
+    //Recebe como parametro os objetos da DTO
+    public void AlterarFuncionario(FuncionarioDTO objFuncionariodto){
+        String sql = "update funcionario set nome_funcionario = ?, endereco_funcionario = ? where id_funcionario = ?";
+        conn = new ConexaoDAO().ConectaBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            pstm.setString(1, objFuncionariodto.getNome_funcionario());
+            pstm.setString(2, objFuncionariodto.getEndereco_funcionario());
+            pstm.setInt(3, objFuncionariodto.getId_funcionario());
+            
+            pstm.execute();
+            JOptionPane.showMessageDialog(null, "Alteramos o funcionario!");
+            pstm.close();
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Alterar: Funcionario DAO" + erro);
+        }
+        
+
+        
+    }
+        //Deletar
+        //Recebe como parametro os objetos da DTO
+        public void deletarFuncionario(FuncionarioDTO objFuncionariodto){
+        String sql = "delete from funcionario where id_funcionario = ?";
+        conn = new ConexaoDAO().ConectaBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+         
+            pstm.setInt(1, objFuncionariodto.getId_funcionario());
+            
+            pstm.execute();
+            JOptionPane.showMessageDialog(null, "Deletamos o funcionario!");
+            pstm.close();
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Excluir: Funcionario DAO" + erro);
+        }
+        }
 }

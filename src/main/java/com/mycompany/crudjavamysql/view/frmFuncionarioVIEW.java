@@ -49,6 +49,13 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tabelaFuncionario = new javax.swing.JTable();
         btnPesquisar = new javax.swing.JButton();
+        txtCodigo = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        btnLimpar = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
+        brnDeletar = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,17 +73,17 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Nome:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 18, -1, -1));
+        jLabel1.setText("Código");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         txtNome.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 46, 344, -1));
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 400, -1));
 
         jLabel2.setText("Endereço:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 84, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         txtEndereco.setBackground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 112, 344, -1));
+        getContentPane().add(txtEndereco, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 400, -1));
 
         brnCadastrar.setText("Inserir");
         brnCadastrar.addActionListener(new java.awt.event.ActionListener() {
@@ -84,7 +91,7 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
                 brnCadastrarActionPerformed(evt);
             }
         });
-        getContentPane().add(brnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        getContentPane().add(brnCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
         jLabel3.setText("CRUD COM JAVA");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, -1));
@@ -102,7 +109,7 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tabelaFuncionario);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 360, 130));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 400, 130));
 
         btnPesquisar.setText("Listar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
@@ -110,7 +117,49 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
                 btnPesquisarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, -1));
+        getContentPane().add(btnPesquisar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+
+        txtCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        txtCodigo.setEnabled(false);
+        getContentPane().add(txtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 100, -1));
+
+        jLabel4.setText("Nome:");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+
+        jButton1.setText("Carregar campos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, -1, -1));
+
+        jLabel5.setText("Selecione para excluir ou alterar:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 200, 20));
+
+        btnLimpar.setText("Limpar");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, -1, -1));
+
+        btnAlterar.setText("Alterar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+
+        brnDeletar.setText("Deletar");
+        brnDeletar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brnDeletarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(brnDeletar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,6 +175,30 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
         // TODO add your handling code here:
         listarValores();
     }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        CarregarCampos();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+        LimparCampos();
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+        // TODO add your handling code here:
+        AlterarFuncionario();
+        listarValores();
+        LimparCampos();
+    }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void brnDeletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brnDeletarActionPerformed
+        // TODO add your handling code here:
+        DeletarFuncionario();
+        listarValores();
+        LimparCampos();
+    }//GEN-LAST:event_brnDeletarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,14 +237,21 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton brnCadastrar;
+    private javax.swing.JButton brnDeletar;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnLimpar;
     private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable tabelaFuncionario;
+    private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
@@ -221,5 +301,55 @@ public class frmFuncionarioVIEW extends javax.swing.JFrame {
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "Erro no Listar Valores VIEW" + erro);
         }
+    }
+    private void CarregarCampos(){
+        int setar = tabelaFuncionario.getSelectedRow();
+        
+        txtCodigo.setText(tabelaFuncionario.getModel().getValueAt(setar,0).toString());
+        txtNome.setText(tabelaFuncionario.getModel().getValueAt(setar,1).toString());
+        txtEndereco.setText(tabelaFuncionario.getModel().getValueAt(setar,2).toString());
+        
+    }
+    private void LimparCampos(){
+    txtCodigo.setText("");
+    txtNome.setText("");
+    txtEndereco.setText("");
+    
+    // Foco no primeiro elemento a ser digitado
+    
+    txtNome.requestFocus();
+    }
+    
+    private void AlterarFuncionario(){
+        int id_funcionario;
+        String nome_funcionario, endereco_funcionario;
+        
+        //pega a string do txtCodigo e passa pra int
+        id_funcionario = Integer.parseInt(txtCodigo.getText());
+        //String pra String esta correto
+        nome_funcionario = txtNome.getText();
+        endereco_funcionario = txtEndereco.getText();
+        
+        FuncionarioDTO objFuncionarioDTO = new FuncionarioDTO();
+        objFuncionarioDTO.setId_funcionario(id_funcionario);
+        objFuncionarioDTO.setNome_funcionario(nome_funcionario);
+        objFuncionarioDTO.setEndereco_funcionario(endereco_funcionario);
+        
+        FuncionarioDAO objFuncionarioDAO = new FuncionarioDAO();
+        objFuncionarioDAO.AlterarFuncionario(objFuncionarioDTO);
+        
+        
+    }
+    public void DeletarFuncionario(){
+        int id_funcionario;
+        id_funcionario = Integer.parseInt(txtCodigo.getText());
+        
+        //Enviando para funcionario DTO o conteudo do id pegado no txtCodigo
+        FuncionarioDTO objFuncionarioDTO = new FuncionarioDTO();
+        objFuncionarioDTO.setId_funcionario(id_funcionario);
+        
+        //Chamando o metodo deletar da Funcionario dao
+        FuncionarioDAO objFuncionarioDAO = new FuncionarioDAO();
+        objFuncionarioDAO.deletarFuncionario(objFuncionarioDTO);
     }
 }
